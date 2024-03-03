@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
@@ -19,6 +20,7 @@
     nixpkgs,
     flake-utils,
     gen-luarc,
+    neovim-nightly-overlay,
     ...
   }: let
     supportedSystems = [
@@ -35,6 +37,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
+          neovim-nightly-overlay.overlay
           # Import the overlay, so that the final Neovim derivation(s) can be accessed via pkgs.<nvim-pkg>
           neovim-overlay
           # This adds a function can be used to generate a .luarc.json

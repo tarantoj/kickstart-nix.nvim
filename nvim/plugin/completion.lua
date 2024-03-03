@@ -73,7 +73,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<C-b>'] = cmp.mapping(function(_)
+    ['<C-d>'] = cmp.mapping(function(_)
       if cmp.visible() then
         cmp.scroll_docs(-4)
       else
@@ -85,28 +85,6 @@ cmp.setup {
         cmp.scroll_docs(4)
       else
         complete_with_source('path')
-      end
-    end, { 'i', 'c', 's' }),
-    ['<C-n>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-        -- expand_or_jumpable(): Jump outside the snippet region
-        -- expand_or_locally_jumpable(): Only jump inside the snippet region
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { 'i', 'c', 's' }),
-    ['<C-p>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
       end
     end, { 'i', 'c', 's' }),
     -- toggle completion

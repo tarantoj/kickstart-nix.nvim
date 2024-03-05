@@ -59,6 +59,7 @@ with final.pkgs.lib; let
     # ^ UI
     # language support
     omnisharp-extended-lsp-nvim
+    nvim-lspconfig
     # ^ language support
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/

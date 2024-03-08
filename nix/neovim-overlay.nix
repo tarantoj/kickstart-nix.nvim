@@ -37,6 +37,7 @@ with final.pkgs.lib; let
     cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
     cmp-cmdline # cmp command line suggestions
     cmp-cmdline-history # cmp command line history suggestions
+    friendly-snippets
     # ^ nvim-cmp extensions
     # git integration plugins
     diffview-nvim # https://github.com/sindrets/diffview.nvim/

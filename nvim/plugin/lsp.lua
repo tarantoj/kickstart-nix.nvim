@@ -1,9 +1,9 @@
-local lspconfig = require('lspconfig')
+local lspconfig = require 'lspconfig'
 
 lspconfig.omnisharp.setup {
-  cmd = { "OmniSharp" },
+  cmd = { 'OmniSharp' },
   handlers = {
-    ["textDocument/definition"] = require('omnisharp_extended').handler,
+    ['textDocument/definition'] = require('omnisharp_extended').handler,
   },
   -- Enables support for reading code style, naming convention and analyzer
   -- settings from .editorconfig.
@@ -58,23 +58,22 @@ lspconfig.yamlls.setup {
         -- this plugin and its advanced options like `ignore`.
         enable = false,
         -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-        url = "",
+        url = '',
       },
       schemas = require('schemastore').yaml.schemas(),
     },
   },
 }
 
-lspconfig.eslint.setup({
+lspconfig.eslint.setup {
   --- ...
   on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
-      command = "EslintFixAll",
+      command = 'EslintFixAll',
     })
   end,
-})
-
+}
 
 lspconfig.tsserver.setup {}
 

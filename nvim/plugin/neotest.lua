@@ -1,8 +1,6 @@
-require("neotest").setup({
+require('neotest').setup {
   adapters = {
-    require("neotest-jest")({
-    }),
-    require("neotest-dotnet"),
+    require 'neotest-jest' {},
+    require 'neotest-dotnet',
   },
-})
-
+}

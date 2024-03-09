@@ -3,7 +3,7 @@ if vim.g.did_load_statuscol_plugin then
 end
 vim.g.did_load_statuscol_plugin = true
 
-local builtin = require('statuscol.builtin')
+local builtin = require 'statuscol.builtin'
 require('statuscol').setup {
   setopt = true,
   relculright = true,

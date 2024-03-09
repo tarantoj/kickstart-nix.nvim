@@ -3,7 +3,7 @@ if vim.g.did_load_neogit_plugin then
 end
 vim.g.did_load_neogit_plugin = true
 
-local neogit = require('neogit')
+local neogit = require 'neogit'
 
 neogit.setup {
   disable_builtin_notifications = true,

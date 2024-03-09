@@ -28,7 +28,8 @@ opt.incsearch = true
 opt.hlsearch = true
 
 opt.spell = true
-opt.spelllang = 'en'
+opt.spelllang = 'en_au'
+opt.spelloptions = 'camel,noplainbuffer'
 
 opt.expandtab = true
 opt.tabstop = 2

@@ -44,6 +44,8 @@ with final.pkgs.lib; let
     neogit # https://github.com/TimUntersberger/neogit/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
     vim-fugitive # https://github.com/tpope/vim-fugitive/
+    vim-rhubarb
+    octo-nvim
     # ^ git integration plugins
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
@@ -99,7 +101,6 @@ with final.pkgs.lib; let
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
-    vim-rhubarb
     SchemaStore-nvim
   ];
 
@@ -116,6 +117,7 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     nodePackages.prettier
     prettierd
+    gh
   ];
 in {
   # This is the neovim derivation

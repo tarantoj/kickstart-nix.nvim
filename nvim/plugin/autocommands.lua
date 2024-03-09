@@ -11,7 +11,7 @@ api.nvim_create_autocmd('BufWritePre', {
   pattern = '/tmp/*',
   group = tempdirgroup,
   callback = function()
-    vim.cmd.setlocal('noundofile')
+    vim.cmd.setlocal 'noundofile'
   end,
 })
 
@@ -63,11 +63,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
     -- Attach plugins
-    if client.supports_method("textDocument/documentSymbol") then
+    ---@diagnostic disable-next-line: need-check-nil
+    if client.supports_method 'textDocument/documentSymbol' then
       require('nvim-navic').attach(client, bufnr)
     end
 
-    vim.cmd.setlocal('signcolumn=yes')
+    vim.cmd.setlocal 'signcolumn=yes'
     vim.bo[bufnr].bufhidden = 'hide'
 
     -- Enable completion triggered by <c-x><c-o>
@@ -87,22 +88,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, desc('lsp [w]orkspace folder [r]emove'))
     keymap.set('n', '<space>wl', function()
       vim.print(vim.lsp.buf.list_workspace_folders())
-    end, desc('[lsp] [w]orkspace folders [l]ist'))
-    keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc('lsp [r]e[n]ame'))
-    keymap.set('n', '<space>wq', vim.lsp.buf.workspace_symbol, desc('lsp [w]orkspace symbol [q]'))
-    keymap.set('n', '<space>dd', require('telescope.builtin').lsp_document_symbols, desc('lsp [dd]ocument symbol'))
-    keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc('[lsp] code action'))
-    keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
-    keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, desc('lsp [c]ode lenses [r]efresh'))
-    keymap.set('n', 'gr', require('telescope.builtin').lsp_references, desc('lsp [g]et [r]eferences'))
+    end, desc '[lsp] [w]orkspace folders [l]ist')
+    keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc 'lsp [r]e[n]ame')
+    keymap.set('n', '<space>wq', vim.lsp.buf.workspace_symbol, desc 'lsp [w]orkspace symbol [q]')
+    keymap.set('n', '<space>dd', require('telescope.builtin').lsp_document_symbols, desc 'lsp [dd]ocument symbol')
+    keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc '[lsp] code action')
+    keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc '[lsp] run code lens')
+    keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, desc 'lsp [c]ode lenses [r]efresh')
+    keymap.set('n', 'gr', require('telescope.builtin').lsp_references, desc 'lsp [g]et [r]eferences')
     keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
-    end, desc('[lsp] [f]ormat buffer'))
+    end, desc '[lsp] [f]ormat buffer')
     if client.server_capabilities.inlayHintProvider then
       keymap.set('n', '<space>h', function()
         local current_setting = vim.lsp.inlay_hint.is_enabled(bufnr)
         vim.lsp.inlay_hint.enable(bufnr, not current_setting)
-      end, desc('[lsp] toggle inlay hints'))
+      end, desc '[lsp] toggle inlay hints')
     end
 
     -- Auto-refresh code lenses

@@ -3,10 +3,10 @@ if vim.g.did_load_telescope_plugin then
 end
 vim.g.did_load_telescope_plugin = true
 
-local telescope = require('telescope')
-local actions = require('telescope.actions')
+local telescope = require 'telescope'
+local actions = require 'telescope.actions'
 
-local builtin = require('telescope.builtin')
+local builtin = require 'telescope.builtin'
 
 local layout_config = {
   vertical = {
@@ -32,7 +32,7 @@ end
 
 ---@param picker function the telescope picker to use
 local function grep_current_file_type(picker)
-  local current_file_ext = vim.fn.expand('%:e')
+  local current_file_ext = vim.fn.expand '%:e'
   local additional_vimgrep_arguments = {}
   if current_file_ext ~= '' then
     additional_vimgrep_arguments = {
@@ -77,12 +77,7 @@ vim.keymap.set('n', '<C-g>', builtin.live_grep, { desc = '[telescope] live grep'
 vim.keymap.set('n', '<leader>tf', fuzzy_grep, { desc = '[t]elescope [f]uzzy grep' })
 vim.keymap.set('n', '<M-f>', fuzzy_grep_current_file_type, { desc = '[telescope] fuzzy grep filetype' })
 vim.keymap.set('n', '<M-g>', live_grep_current_file_type, { desc = '[telescope] live grep filetype' })
-vim.keymap.set(
-  'n',
-  '<leader>t*',
-  grep_string_current_file_type,
-  { desc = '[t]elescope grep current string [*] in current filetype' }
-)
+vim.keymap.set('n', '<leader>t*', grep_string_current_file_type, { desc = '[t]elescope grep current string [*] in current filetype' })
 vim.keymap.set('n', '<leader>*', builtin.grep_string, { desc = '[telescope] grep current string [*]' })
 vim.keymap.set('n', '<leader>tg', project_files, { desc = '[t]elescope project files [g]' })
 vim.keymap.set('n', '<leader>tc', builtin.quickfix, { desc = '[t]elescope quickfix list [c]' })
@@ -90,19 +85,9 @@ vim.keymap.set('n', '<leader>tq', builtin.command_history, { desc = '[t]elescope
 vim.keymap.set('n', '<leader>tl', builtin.loclist, { desc = '[t]elescope [l]oclist' })
 vim.keymap.set('n', '<leader>tr', builtin.registers, { desc = '[t]elescope [r]egisters' })
 vim.keymap.set('n', '<leader>tbb', builtin.buffers, { desc = '[t]elescope [b]uffers [b]' })
-vim.keymap.set(
-  'n',
-  '<leader>tbf',
-  builtin.current_buffer_fuzzy_find,
-  { desc = '[t]elescope current [b]uffer [f]uzzy find' }
-)
+vim.keymap.set('n', '<leader>tbf', builtin.current_buffer_fuzzy_find, { desc = '[t]elescope current [b]uffer [f]uzzy find' })
 vim.keymap.set('n', '<leader>td', builtin.lsp_document_symbols, { desc = '[t]elescope lsp [d]ocument symbols' })
-vim.keymap.set(
-  'n',
-  '<leader>to',
-  builtin.lsp_dynamic_workspace_symbols,
-  { desc = '[t]elescope lsp dynamic w[o]rkspace symbols' }
-)
+vim.keymap.set('n', '<leader>to', builtin.lsp_dynamic_workspace_symbols, { desc = '[t]elescope lsp dynamic w[o]rkspace symbols' })
 
 telescope.setup {
   defaults = {
@@ -127,7 +112,7 @@ telescope.setup {
       treesitter = true,
     },
     history = {
-      path = vim.fn.stdpath('data') .. '/telescope_history.sqlite3',
+      path = vim.fn.stdpath 'data' .. '/telescope_history.sqlite3',
       limit = 1000,
     },
     color_devicons = true,

@@ -82,7 +82,7 @@ with final.pkgs.lib; let
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     nvim-treesitter-textsubjects
-    
+
     trouble-nvim
     # ^ navigation/editing enhancement plugins
     # Useful utilities

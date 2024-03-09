@@ -118,6 +118,7 @@ with final.pkgs.lib; let
     nodePackages.prettier
     prettierd
     gh
+    ripgrep
   ];
 in {
   # This is the neovim derivation

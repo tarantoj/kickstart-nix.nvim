@@ -60,6 +60,8 @@ with final.pkgs.lib; let
     # language support
     omnisharp-extended-lsp-nvim
     nvim-lspconfig
+    none-ls-nvim
+    conform-nvim
     # ^ language support
     # debug
     nvim-dap

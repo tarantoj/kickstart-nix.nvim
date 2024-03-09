@@ -20,6 +20,7 @@ configs.setup {
       end
     end,
   },
+  incremental_selection = { enable = true },
   textobjects = {
     select = {
       enable = true,
@@ -43,7 +44,7 @@ configs.setup {
       },
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
     },
@@ -76,7 +77,7 @@ configs.setup {
         ['[P'] = '@parameter.outer',
       },
     },
-    nsp_interop = {
+    lsp_interop = {
       enable = true,
       peek_definition_code = {
         ['df'] = '@function.outer',
@@ -84,6 +85,21 @@ configs.setup {
       },
     },
   },
+  textsubjects = {
+    enable = true,
+    prev_selection = ',',     -- (Optional) keymap to select the previous selection
+    keymaps = {
+      ['.'] = 'textsubjects-smart',
+      [';'] = 'textsubjects-container-outer',
+      -- ['i;'] = 'textsubjects-container-inner',
+      ['i;'] = { 'textsubjects-container-inner', desc = "Select inside containers (classes, functions, etc.)" },
+    },
+  },
+  endwise = {
+    enable = true,
+  },
+
+
 }
 
 require('treesitter-context').setup {

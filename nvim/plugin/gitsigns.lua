@@ -41,10 +41,10 @@ vim.schedule(function()
 
       -- Actions
       map({ 'n', 'v' }, '<leader>hs', function()
-        vim.cmd.Gitsigns('stage_hunk')
+        vim.cmd.Gitsigns 'stage_hunk'
       end, { desc = 'git [h]unk [s]tage' })
       map({ 'n', 'v' }, '<leader>hr', function()
-        vim.cmd.Gitsigns('reset_hunk')
+        vim.cmd.Gitsigns 'reset_hunk'
       end, { desc = 'git [h]unk [r]eset' })
       map('n', '<leader>hS', gs.stage_buffer, { desc = 'git stage buffer' })
       map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'git [h]unk [u]ndo stage' })
@@ -56,7 +56,7 @@ vim.schedule(function()
       map('n', '<leader>glb', gs.toggle_current_line_blame, { desc = '[g]it toggle current [l]ine [b]lame' })
       map('n', '<leader>hd', gs.diffthis, { desc = 'git [h] [d]iff this' })
       map('n', '<leader>hD', function()
-        gs.diffthis('~')
+        gs.diffthis '~'
       end, { desc = 'git [h] [D]iff ~' })
       map('n', '<leader>td', gs.toggle_deleted, { desc = 'git [t]oggle [d]eleted' })
       -- Text object

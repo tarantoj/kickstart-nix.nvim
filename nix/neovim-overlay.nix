@@ -69,17 +69,19 @@ with final.pkgs.lib; let
     nvim-dap-virtual-text
     telescope-dap-nvim
     # ^ debug
-    # test
+    # testing
     neotest
     neotest-jest
     neotest-dotnet
-    # ^ test
+    # ^ testing
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
+    nvim-treesitter-textsubjects
+    
     trouble-nvim
     # ^ navigation/editing enhancement plugins
     # Useful utilities
@@ -96,6 +98,8 @@ with final.pkgs.lib; let
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
+    vim-rhubarb
+    SchemaStore-nvim
   ];
 
   extraPackages = with pkgs; [
@@ -104,7 +108,10 @@ with final.pkgs.lib; let
     typos-lsp
     netcoredbg
     omnisharp-roslyn
+    vscode-langservers-extracted
+    stylua
     nil # nix LSP
+    nodePackages.typescript-language-server
   ];
 in {
   # This is the neovim derivation

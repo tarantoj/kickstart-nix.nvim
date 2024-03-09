@@ -126,6 +126,8 @@ in {
   nvim-pkg = mkNeovim {
     plugins = all-plugins;
     inherit extraPackages;
+    viAlias = true;
+    vimAlias = true;
   };
 
   # This can be symlinked in the devShell's shellHook

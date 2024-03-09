@@ -1,16 +1,16 @@
 local cmd = vim.cmd
 local fn = vim.fn
-local opt = vim.o
+local opt = vim.opt
 local g = vim.g
 
 -- <leader> key. Defaults to `\`. Some people prefer space.
- g.mapleader = ' '
- g.maplocalleader = ' '
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 opt.compatible = false
 
 -- Enable true colour support
-if fn.has('termguicolors') then
+if fn.has 'termguicolors' then
   opt.termguicolors = true
 end
 
@@ -22,6 +22,7 @@ opt.path = vim.o.path .. '**'
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
+opt.scrolloff = 10
 opt.lazyredraw = true
 opt.showmatch = true -- Highlight matching parentheses, etc
 opt.incsearch = true
@@ -43,7 +44,13 @@ opt.splitright = true
 opt.splitbelow = true
 opt.cmdheight = 0
 
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+-- Sets how neovim will display certain whitespace in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+opt.list = true
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Configure Neovim diagnostic messages
 
@@ -104,13 +111,13 @@ vim.opt.colorcolumn = '100'
 
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')
-cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
+cmd.packadd 'cfilter' -- Allows filtering the quickfix list with :cfdo
 
 -- let sqlite.lua (which some plugins depend on) know where to find sqlite
-vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
+vim.g.sqlite_clib_path = require('luv').os_getenv 'LIBSQLITE'
 
 -- this should be at the end, because
 -- it causes neovim to source ftplugins
 -- on the packpath when passing a file to the nvim command
-cmd.syntax('on')
-cmd.syntax('enable')
+cmd.syntax 'on'
+cmd.syntax 'enable'

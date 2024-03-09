@@ -1,3 +1,9 @@
+
+if vim.g.did_load_catppuccin_plugin then
+  return
+end
+vim.g.did_load_catppuccin_plugin = true
+
 require("catppuccin").setup({
   flavour = "mocha",   -- latte, frappe, macchiato, mocha
   background = {       -- :h background

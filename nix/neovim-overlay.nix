@@ -108,11 +108,14 @@ with final.pkgs.lib; let
     lua-language-server
     typos-lsp
     netcoredbg
+    alejandra
     omnisharp-roslyn
     vscode-langservers-extracted
     stylua
     nil # nix LSP
     nodePackages.typescript-language-server
+    nodePackages.prettier
+    prettierd
   ];
 in {
   # This is the neovim derivation

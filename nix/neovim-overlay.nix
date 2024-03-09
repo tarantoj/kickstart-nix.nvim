@@ -61,6 +61,12 @@ with final.pkgs.lib; let
     omnisharp-extended-lsp-nvim
     nvim-lspconfig
     # ^ language support
+    # debug
+    nvim-dap
+    nvim-dap-ui
+    nvim-dap-virtual-text
+    telescope-dap-nvim
+    # ^ debug
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
@@ -88,6 +94,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     typos-lsp
+    netcoredbg
     omnisharp-roslyn
     nil # nix LSP
   ];

@@ -116,9 +116,17 @@ cmp.setup {
     ['<C-y>'] = cmp.mapping.confirm {
       select = true,
     },
+    ['<CR>'] = cmp.mapping.confirm {
+      select = true,
+    },
+    ['<S-CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
   },
   sources = cmp.config.sources {
     -- The insertion order influences the priority of the sources
+    { name = 'luasnip'},
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'nvim_lsp_signature_help', keyword_length = 3 },
     { name = 'buffer' },

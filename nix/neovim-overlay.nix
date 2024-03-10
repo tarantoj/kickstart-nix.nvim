@@ -84,6 +84,7 @@ with final.pkgs.lib; let
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     nvim-treesitter-textsubjects
+    nvim-ts-autotag
     comment-nvim
     todo-comments-nvim
     trouble-nvim

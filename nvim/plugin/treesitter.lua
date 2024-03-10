@@ -98,6 +98,9 @@ configs.setup {
   endwise = {
     enable = true,
   },
+  autotag = {
+    enable = true,
+  },
 }
 
 require('treesitter-context').setup {

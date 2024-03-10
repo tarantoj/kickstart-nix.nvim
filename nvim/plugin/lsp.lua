@@ -1,6 +1,14 @@
 local lspconfig = require 'lspconfig'
+local navic = require 'nvim-navic'
+
+local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
+  end
+end
 
 lspconfig.omnisharp.setup {
+  on_attach = on_attach,
   cmd = { 'OmniSharp' },
   handlers = {
     ['textDocument/definition'] = require('omnisharp_extended').handler,
@@ -42,6 +50,7 @@ lspconfig.omnisharp.setup {
 }
 
 lspconfig.jsonls.setup {
+  on_attach = on_attach,
   settings = {
     json = {
       schemas = require('schemastore').json.schemas(),
@@ -51,6 +60,7 @@ lspconfig.jsonls.setup {
 }
 
 lspconfig.yamlls.setup {
+  on_attach = on_attach,
   settings = {
     yaml = {
       schemaStore = {
@@ -75,13 +85,16 @@ lspconfig.eslint.setup {
   end,
 }
 
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+}
 
 lspconfig.html.setup {}
 
 lspconfig.typos_lsp.setup {}
 
 lspconfig.lua_ls.setup {
+  on_attach = on_attach,
   settings = {
     Lua = {
       runtime = {
@@ -116,4 +129,6 @@ lspconfig.lua_ls.setup {
   },
 }
 
-require('lspconfig').nil_ls.setup {}
+require('lspconfig').nil_ls.setup {
+  on_attach = on_attach,
+}

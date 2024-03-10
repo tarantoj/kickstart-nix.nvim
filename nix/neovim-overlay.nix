@@ -84,7 +84,8 @@ with final.pkgs.lib; let
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     nvim-treesitter-textsubjects
-
+    comment-nvim
+    todo-comments-nvim
     trouble-nvim
     # ^ navigation/editing enhancement plugins
     # Useful utilities
@@ -102,6 +103,7 @@ with final.pkgs.lib; let
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
     SchemaStore-nvim
+    direnv-vim
   ];
 
   extraPackages = with pkgs; [

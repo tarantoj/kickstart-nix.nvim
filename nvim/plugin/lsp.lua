@@ -77,4 +77,43 @@ lspconfig.eslint.setup {
 
 lspconfig.tsserver.setup {}
 
+lspconfig.html.setup {}
+
 lspconfig.typos_lsp.setup {}
+
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global, etc.
+        globals = {
+          'vim',
+          'describe',
+          'it',
+          'assert',
+          'stub',
+        },
+        disable = {
+          'duplicate-set-field',
+        },
+      },
+      workspace = {
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+      hint = { -- inlay hints (supported in Neovim >= 0.10)
+        enable = true,
+      },
+      codeLens = {
+        enable = true,
+      },
+    },
+  },
+}
+
+require('lspconfig').nil_ls.setup {}

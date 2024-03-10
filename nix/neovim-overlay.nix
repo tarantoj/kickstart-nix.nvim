@@ -88,6 +88,7 @@ with final.pkgs.lib; let
     comment-nvim
     todo-comments-nvim
     trouble-nvim
+    treesj
     # ^ navigation/editing enhancement plugins
     # Useful utilities
     mini-nvim

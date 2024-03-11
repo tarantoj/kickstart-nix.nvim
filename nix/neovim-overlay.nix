@@ -89,6 +89,9 @@ with final.pkgs.lib; let
     todo-comments-nvim
     trouble-nvim
     treesj
+    rainbow-delimiters-nvim
+    indent-blankline-nvim
+    neo-tree-nvim
     # ^ navigation/editing enhancement plugins
     # Useful utilities
     mini-nvim
@@ -123,6 +126,7 @@ with final.pkgs.lib; let
     prettierd
     gh
     ripgrep
+    yaml-language-server
   ];
 in {
   # This is the neovim derivation

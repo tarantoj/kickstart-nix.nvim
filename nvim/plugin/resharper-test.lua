@@ -53,12 +53,12 @@ local function check_exit_code(code, stderr)
   return code == 0 or stderr:match('Checkstyle ends with ' .. code .. ' errors.')
 end
 
-local resharper = {
-  method = require('null_ls.methods').internal.DIAGNOSTICS_ON_SAVE,
-
-  filetypes = { 'csharp' },
-  generator = require('null_ls').generator { command = 'jb', format = 'json_raw' },
-}
+-- local resharper = {
+--   method = require('null_ls.methods').internal.DIAGNOSTICS_ON_SAVE,
+--
+--   filetypes = { 'csharp' },
+--   generator = require('null_ls').generator { command = 'jb', format = 'json_raw' },
+-- }
 
 -- return h.make_builtin {
 --   name = 'resharper',

@@ -127,6 +127,7 @@ with final.pkgs.lib; let
     gh
     ripgrep
     yaml-language-server
+    gopls
   ];
 in {
   # This is the neovim derivation

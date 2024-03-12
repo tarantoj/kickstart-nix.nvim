@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       return { noremap = true, silent = true, buffer = bufnr, desc = description }
     end
     keymap.set('n', 'gD', vim.lsp.buf.declaration, desc 'lsp [g]o to [D]eclaration')
-    keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, desc 'lsp [g]o to [d]efinition')
+    keymap.set('n', 'gd', vim.lsp.buf.definition, desc 'lsp [g]o to [d]efinition')
     keymap.set('n', '<space>gt', require('telescope.builtin').lsp_type_definitions, desc 'lsp [g]o to [t]ype definition')
     keymap.set('n', 'K', vim.lsp.buf.hover, desc '[lsp] hover')
     keymap.set('n', '<space>pd', peek_definition, desc 'lsp [p]eek [d]efinition')

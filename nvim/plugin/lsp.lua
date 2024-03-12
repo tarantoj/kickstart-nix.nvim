@@ -11,7 +11,9 @@ lspconfig.omnisharp.setup {
   on_attach = on_attach,
   cmd = { 'OmniSharp' },
   handlers = {
-    ['textDocument/definition'] = require('omnisharp_extended').handler,
+    ['textDocument/definition'] = require('omnisharp_extended').definition_handler,
+    ['textDocument/references'] = require('omnisharp_extended').references_handler,
+    ['textDocument/implementation'] = require('omnisharp_extended').implementation_handler,
   },
   -- Enables support for reading code style, naming convention and analyzer
   -- settings from .editorconfig.

@@ -12,3 +12,6 @@ require('trouble').setup()
 require('octo').setup()
 require('todo-comments').setup()
 require('treesj').setup()
+require('nvim-lightbulb').setup {
+  autocmd = { enabled = true },
+}

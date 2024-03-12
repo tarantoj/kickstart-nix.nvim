@@ -111,6 +111,8 @@ with final.pkgs.lib; let
     which-key-nvim
     SchemaStore-nvim
     direnv-vim
+    dressing-nvim
+    ollama-nvim
   ];
 
   extraPackages = with pkgs; [
@@ -130,6 +132,7 @@ with final.pkgs.lib; let
     ripgrep
     yaml-language-server
     gopls
+    ollama
   ];
 in {
   # This is the neovim derivation

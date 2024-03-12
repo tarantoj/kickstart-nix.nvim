@@ -7,6 +7,10 @@
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
+    omnisharp-extended-lsp-nvim = {
+      url = "github:Hoffs/omnisharp-extended-lsp.nvim";
+      flake = false;
+    };
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
     # wf-nvim = {
@@ -21,6 +25,7 @@
     flake-utils,
     gen-luarc,
     neovim-nightly-overlay,
+    omnisharp-extended-lsp-nvim,
     ...
   }: let
     supportedSystems = [

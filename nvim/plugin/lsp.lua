@@ -7,8 +7,11 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
+
 lspconfig.omnisharp.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   cmd = { 'OmniSharp' },
   handlers = {
     -- ['textDocument/definition'] = require('omnisharp_extended').handler,
@@ -54,6 +57,7 @@ lspconfig.omnisharp.setup {
 
 lspconfig.jsonls.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     json = {
       schemas = require('schemastore').json.schemas(),
@@ -64,6 +68,7 @@ lspconfig.jsonls.setup {
 
 lspconfig.yamlls.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     yaml = {
       schemaStore = {
@@ -80,24 +85,35 @@ lspconfig.yamlls.setup {
 
 lspconfig.eslint.setup {
   --- ...
+  capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
       command = 'EslintFixAll',
     })
+    on_attach(client, bufnr)
   end,
 }
 
 lspconfig.tsserver.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
 }
 
-lspconfig.html.setup {}
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
-lspconfig.typos_lsp.setup {}
+lspconfig.typos_lsp.setup {
+
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -133,7 +149,11 @@ lspconfig.lua_ls.setup {
 }
 
 require('lspconfig').nil_ls.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
 }
 
-require('lspconfig').gopls.setup {}
+require('lspconfig').gopls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}

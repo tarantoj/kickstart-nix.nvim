@@ -20,11 +20,11 @@ require('conform').setup {
     lsp_fallback = true,
   },
   formatters = {
-    resharper = {
-      args = { 'cleanupcode', '$FILENAME' },
-      command = 'jb',
-      stdin = false,
-      cwd = require('conform.util').root_file { '.git', '*.sln' },
-    },
+    -- resharper = {
+    --   args = { 'cleanupcode', '$FILENAME' },
+    --   command = 'jb',
+    --   stdin = false,
+    --   cwd = require('conform.util').root_file { '.git', '*.sln' },
+    -- },
   },
 }

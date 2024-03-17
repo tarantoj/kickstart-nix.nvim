@@ -134,6 +134,7 @@ cmp.setup {
     },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'nerdfont', trigger_characters = { ':' } },
   },
   enabled = function()
     return vim.bo[0].buftype ~= 'prompt'

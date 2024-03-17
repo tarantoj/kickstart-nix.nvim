@@ -11,6 +11,11 @@
       url = "github:Hoffs/omnisharp-extended-lsp.nvim";
       flake = false;
     };
+
+    cmp-nerdfont = {
+      url = "github:chrisgrieser/cmp-nerdfont";
+      flake = false;
+    };
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
     # wf-nvim = {
@@ -26,6 +31,7 @@
     gen-luarc,
     neovim-nightly-overlay,
     omnisharp-extended-lsp-nvim,
+    cmp-nerdfont,
     ...
   }: let
     supportedSystems = [

@@ -148,12 +148,12 @@ lspconfig.lua_ls.setup {
   },
 }
 
-require('lspconfig').nil_ls.setup {
+lspconfig.nil_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
 
-require('lspconfig').gopls.setup {
+lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

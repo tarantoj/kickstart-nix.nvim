@@ -114,6 +114,7 @@ with final.pkgs.lib; let
     direnv-vim
     dressing-nvim
     ollama-nvim
+    copilot-lua
   ];
 
   extraPackages = with pkgs; [

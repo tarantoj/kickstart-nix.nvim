@@ -135,6 +135,7 @@ with final.pkgs.lib; let
     yaml-language-server
     gopls
     ollama
+    nodePackages.nodejs
   ];
 in {
   # This is the neovim derivation

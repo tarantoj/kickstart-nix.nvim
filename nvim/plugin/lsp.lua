@@ -10,7 +10,10 @@ end
 local capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
 
 lspconfig.omnisharp.setup {
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    vim.cmd.compiler 'dotnet'
+    on_attach(client, bufnr)
+  end,
   capabilities = capabilities,
   cmd = { 'OmniSharp' },
   handlers = {

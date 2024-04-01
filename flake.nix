@@ -24,6 +24,11 @@
     # };
   };
 
+  nixConfig = {
+    extra-substituters = ["https://tarantoj.cachix.org"];
+    extra-trusted-public-keys = ["tarantoj.cachix.org-1:nZLdEC/kv8a7dGRU5lupTrByi3GrazGSb+xtptPRp8o="];
+  };
+
   outputs = inputs @ {
     self,
     nixpkgs,

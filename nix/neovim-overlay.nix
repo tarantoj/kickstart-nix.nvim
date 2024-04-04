@@ -127,6 +127,7 @@ with final.pkgs.lib; let
     omnisharp-roslyn
     vscode-langservers-extracted
     stylua
+    roslyn-ls
     nil # nix LSP
     nodePackages.typescript-language-server
     nodePackages.prettier

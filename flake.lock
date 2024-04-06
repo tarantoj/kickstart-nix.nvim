@@ -252,30 +252,13 @@
         "type": "github"
       }
     },
-    "omnisharp-extended-lsp-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1711865284,
-        "narHash": "sha256-V8tR3efurqCUsm4G8j3J8aYi6rbdRj3CuaGdSSbpDcU=",
-        "owner": "Hoffs",
-        "repo": "omnisharp-extended-lsp.nvim",
-        "rev": "6e0aa6465f8fa8ac6c833f6ac4713adfee0202a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Hoffs",
-        "repo": "omnisharp-extended-lsp.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "cmp-nerdfont": "cmp-nerdfont",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
-        "nixpkgs": "nixpkgs",
-        "omnisharp-extended-lsp-nvim": "omnisharp-extended-lsp-nvim"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {

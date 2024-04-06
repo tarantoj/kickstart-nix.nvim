@@ -63,7 +63,8 @@ with final.pkgs.lib; let
     nvim-lightbulb
     # ^ UI
     # language support
-    (mkNvimPlugin inputs.omnisharp-extended-lsp-nvim "omnisharp-extended-lsp.nvim")
+    omnisharp-extended-lsp-nvim
+    # (mkNvimPlugin inputs.omnisharp-extended-lsp-nvim "omnisharp-extended-lsp.nvim")
     nvim-lspconfig
     none-ls-nvim
     conform-nvim

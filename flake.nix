@@ -18,10 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    omnisharp-extended-lsp-nvim = {
-      url = "github:Hoffs/omnisharp-extended-lsp.nvim";
-      flake = false;
-    };
+    # omnisharp-extended-lsp-nvim = {
+    #   url = "github:Hoffs/omnisharp-extended-lsp.nvim";
+    #   flake = false;
+    # };
 
     cmp-nerdfont = {
       url = "github:chrisgrieser/cmp-nerdfont";
@@ -52,7 +52,7 @@
     flake-utils,
     gen-luarc,
     neovim-nightly-overlay,
-    omnisharp-extended-lsp-nvim,
+    # omnisharp-extended-lsp-nvim,
     cmp-nerdfont,
     ...
   }: let

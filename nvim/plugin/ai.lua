@@ -10,6 +10,7 @@
 vim.api.nvim_create_autocmd('InsertEnter', {
   group = vim.api.nvim_create_augroup('Copilot', {}),
   callback = function()
-    require('copilot').setup {}
+    require('copilot').setup { suggestion = { enabled = false }, panel = { enabled = false } }
+    require('copilot_cmp').setup()
   end,
 })

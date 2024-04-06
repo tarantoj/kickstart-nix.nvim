@@ -115,6 +115,7 @@ with final.pkgs.lib; let
     dressing-nvim
     ollama-nvim
     copilot-lua
+    copilot-cmp
   ];
 
   extraPackages = with pkgs; [

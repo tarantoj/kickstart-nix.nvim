@@ -4,11 +4,19 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
-    gen-luarc.inputs.nixpkgs.follows = "nixpkgs";
-    gen-luarc.inputs.flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    gen-luarc = {
+      url = "github:mrcjkb/nix-gen-luarc-json";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+      };
+    };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     omnisharp-extended-lsp-nvim = {
       url = "github:Hoffs/omnisharp-extended-lsp.nvim";

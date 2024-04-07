@@ -130,6 +130,7 @@ with final.pkgs.lib; let
     vscode-langservers-extracted
     stylua
     roslyn-ls
+    clang-tools
     nil # nix LSP
     nodePackages.typescript-language-server
     nodePackages.prettier

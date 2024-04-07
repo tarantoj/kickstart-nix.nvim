@@ -162,3 +162,5 @@ lspconfig.gopls.setup {
 }
 
 lspconfig.bashls.setup {}
+
+lspconfig.clangd.setup {}

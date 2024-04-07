@@ -13,6 +13,7 @@ require('conform').setup {
     nix = { 'alejandra' },
     typescript = { { 'prettierd', 'prettier' } },
     typescriptreact = { { 'prettierd', 'prettier' } },
+    sh = { 'shfmt' },
   },
   format_on_save = {
     -- These options will be passed to conform.format()

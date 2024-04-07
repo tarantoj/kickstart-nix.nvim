@@ -133,6 +133,7 @@ with final.pkgs.lib; let
     clang-tools
     nil # nix LSP
     nodePackages.typescript-language-server
+    shfmt
     nodePackages.prettier
     prettierd
     gh

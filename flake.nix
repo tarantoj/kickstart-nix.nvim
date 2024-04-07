@@ -9,7 +9,7 @@
       url = "github:mrcjkb/nix-gen-luarc-json";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+        # flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
       };
     };
 

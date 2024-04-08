@@ -1,5 +1,7 @@
 local dap = require 'dap'
 
+require('dapui').setup()
+
 dap.adapters.coreclr = {
   type = 'executable',
   command = 'netcoredbg',

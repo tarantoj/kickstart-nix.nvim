@@ -12,5 +12,7 @@ vim.api.nvim_create_autocmd('InsertEnter', {
   callback = function()
     require('copilot').setup { suggestion = { enabled = false }, panel = { enabled = false } }
     require('copilot_cmp').setup()
+
+    require('ollama').setup { url = 'http://desktop.lan:11434' }
   end,
 })

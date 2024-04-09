@@ -17,8 +17,8 @@ lspconfig.omnisharp.setup {
   capabilities = capabilities,
   cmd = { 'OmniSharp' },
   handlers = {
-    -- ['textDocument/definition'] = require('omnisharp_extended').handler,
     ['textDocument/definition'] = require('omnisharp_extended').definition_handler,
+    ['textDocument/typeDefinition'] = require('omnisharp_extended').type_definition_handler,
     ['textDocument/references'] = require('omnisharp_extended').references_handler,
     ['textDocument/implementation'] = require('omnisharp_extended').implementation_handler,
   },
@@ -87,7 +87,6 @@ lspconfig.yamlls.setup {
 }
 
 lspconfig.eslint.setup {
-  --- ...
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
@@ -109,7 +108,6 @@ lspconfig.html.setup {
 }
 
 lspconfig.typos_lsp.setup {
-
   on_attach = on_attach,
   capabilities = capabilities,
 }
@@ -161,6 +159,12 @@ lspconfig.gopls.setup {
   on_attach = on_attach,
 }
 
-lspconfig.bashls.setup {}
+lspconfig.bashls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 
-lspconfig.clangd.setup {}
+lspconfig.clangd.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}

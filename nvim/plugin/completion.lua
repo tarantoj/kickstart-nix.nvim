@@ -5,6 +5,11 @@ vim.g.did_load_completion_plugin = true
 
 local cmp = require 'cmp'
 local lspkind = require 'lspkind'
+lspkind.init {
+  symbol_map = {
+    Copilot = '',
+  },
+}
 local luasnip = require 'luasnip'
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }

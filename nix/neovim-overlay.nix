@@ -90,6 +90,7 @@ with final.pkgs.lib; let
     nvim-treesitter-textsubjects
     nvim-ts-autotag
     comment-nvim
+    neogen
     todo-comments-nvim
     trouble-nvim
     treesj

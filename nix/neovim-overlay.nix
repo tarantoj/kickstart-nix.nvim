@@ -86,10 +86,10 @@ with final.pkgs.lib; let
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
-    nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
+    # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     nvim-treesitter-textsubjects
     nvim-ts-autotag
-    comment-nvim
+    # comment-nvim
     neogen
     todo-comments-nvim
     trouble-nvim

@@ -58,3 +58,65 @@ local config = {
 
 dap.configurations.cs = config
 dap.configurations.fsharp = config
+
+require('which-key').register { ['<leader>d'] = { name = '+debug' } }
+
+local keymap = vim.keymap
+keymap.set('n', '<leader>dB', function()
+  require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+end, { desc = 'Breakpoint Condition' })
+
+keymap.set('n', '<leader>db', require('dap').toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+
+keymap.set('n', '<leader>dc', require('dap').continue, { desc = 'Continue' })
+
+-- keymap.set('n', "<leader>da", function() require("dap").continue({ before = get_args }) end, {desc = "Run with Args" })
+keymap.set('n', '<leader>dC', require('dap').run_to_cursor, { desc = 'Run to Cursor' })
+
+keymap.set('n', '<leader>dg', function()
+  require('dap').goto_()
+end, { desc = 'Go to Line (No Execute)' })
+
+keymap.set('n', '<leader>di', function()
+  require('dap').step_into()
+end, { desc = 'Step Into' })
+
+keymap.set('n', '<leader>dj', function()
+  require('dap').down()
+end, { desc = 'Down' })
+
+keymap.set('n', '<leader>dk', function()
+  require('dap').up()
+end, { desc = 'Up' })
+
+keymap.set('n', '<leader>dl', function()
+  require('dap').run_last()
+end, { desc = 'Run Last' })
+
+keymap.set('n', '<leader>do', function()
+  require('dap').step_out()
+end, { desc = 'Step Out' })
+
+keymap.set('n', '<leader>dO', function()
+  require('dap').step_over()
+end, { desc = 'Step Over' })
+
+keymap.set('n', '<leader>dp', function()
+  require('dap').pause()
+end, { desc = 'Pause' })
+
+keymap.set('n', '<leader>dr', function()
+  require('dap').repl.toggle()
+end, { desc = 'Toggle REPL' })
+
+keymap.set('n', '<leader>ds', function()
+  require('dap').session()
+end, { desc = 'Session' })
+
+keymap.set('n', '<leader>dt', function()
+  require('dap').terminate()
+end, { desc = 'Terminate' })
+
+keymap.set('n', '<leader>dw', function()
+  require('dap.ui.widgets').hover()
+end, { desc = 'Widgets' })

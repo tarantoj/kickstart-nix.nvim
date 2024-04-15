@@ -5,6 +5,18 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
+  if vim.lsp.codelens then
+    if client.supports_method 'textDocument/codeLens' then
+      vim.lsp.codelens.refresh { bufnr = bufnr }
+      --- autocmd BufEnter,CursorHold,InsertLeave <buffer> lua vim.lsp.codelens.refresh()
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave' }, {
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.codelens.refresh { bufnr = bufnr }
+        end,
+      })
+    end
+  end
 end
 
 local capabilities = vim.tbl_deep_extend('keep', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())

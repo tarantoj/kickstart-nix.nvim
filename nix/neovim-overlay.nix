@@ -119,6 +119,7 @@ with final.pkgs.lib; let
     ollama-nvim
     copilot-lua
     copilot-cmp
+    obsidian-nvim
   ];
 
   extraPackages = with pkgs; [

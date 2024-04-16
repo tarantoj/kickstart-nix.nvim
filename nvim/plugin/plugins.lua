@@ -17,3 +17,4 @@ require('nvim-lightbulb').setup {
 }
 require 'dressing'
 require('ollama').setup {}
+require('easy-dotnet').setup()

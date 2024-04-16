@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "easy-dotnet": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712938082,
+        "narHash": "sha256-onSjJeYH6dhEoqFeGbZZkWRrL0vvzdwSSOxFLPMwCgs=",
+        "owner": "GustavEikaas",
+        "repo": "easy-dotnet.nvim",
+        "rev": "9c060b79b56d58cd79fd1a79dd45ca357a35457a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GustavEikaas",
+        "repo": "easy-dotnet.nvim",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -256,6 +272,7 @@
     "root": {
       "inputs": {
         "cmp-nerdfont": "cmp-nerdfont",
+        "easy-dotnet": "easy-dotnet",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "neovim-nightly-overlay": "neovim-nightly-overlay",

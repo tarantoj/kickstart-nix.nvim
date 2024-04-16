@@ -28,6 +28,11 @@
     #   url = "github:Cassin01/wf.nvim";
     #   flake = false;
     # };
+
+    easy-dotnet = {
+      url = "github:GustavEikaas/easy-dotnet.nvim";
+      flake = false;
+    };
   };
 
   nixConfig = {
@@ -48,6 +53,7 @@
     gen-luarc,
     neovim-nightly-overlay,
     # omnisharp-extended-lsp-nvim,
+    easy-dotnet,
     cmp-nerdfont,
     ...
   }: let

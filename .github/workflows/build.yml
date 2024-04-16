@@ -30,7 +30,7 @@ jobs:
         #   - nixpkgs=channel:nixpkgs-unstable
         os:
           - ubuntu-latest
-          - macos-14
+          - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout repository

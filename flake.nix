@@ -71,7 +71,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          neovim-nightly-overlay.overlay
+          # neovim-nightly-overlay.overlay
           # Import the overlay, so that the final Neovim derivation(s) can be accessed via pkgs.<nvim-pkg>
           neovim-overlay
           # This adds a function can be used to generate a .luarc.json

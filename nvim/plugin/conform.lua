@@ -1,3 +1,22 @@
+local prettier_settings = {
+  require_cwd = true,
+
+  cwd = require('conform.util').root_file {
+    '.prettierrc',
+    '.prettierrc.json',
+    '.prettierrc.yml',
+    '.prettierrc.yaml',
+    '.prettierrc.json5',
+    '.prettierrc.js',
+    '.prettierrc.cjs',
+    '.prettierrc.mjs',
+    '.prettierrc.toml',
+    'prettier.config.js',
+    'prettier.config.cjs',
+    'prettier.config.mjs',
+  },
+}
+
 require('conform').setup {
   formatters_by_ft = {
     lua = { 'stylua' },
@@ -21,6 +40,8 @@ require('conform').setup {
     lsp_fallback = true,
   },
   formatters = {
+    prettier = prettier_settings,
+    prettierd = prettier_settings,
     -- resharper = {
     --   args = { 'cleanupcode', '$FILENAME' },
     --   command = 'jb',

@@ -12,5 +12,3 @@ require('obsidian').setup {
     min_chars = 2,
   },
 }
-
-vim.opt.conceallevel = 1

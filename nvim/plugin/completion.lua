@@ -75,6 +75,24 @@ cmp.setup {
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      require('copilot_cmp.comparators').prioritize,
+
+      -- Below is the default comparator list and order for nvim-cmp
+      cmp.config.compare.offset,
+      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
   mapping = {
     ['<C-b>'] = cmp.mapping(function(_)
       if cmp.visible() then
@@ -133,17 +151,19 @@ cmp.setup {
   },
   sources = cmp.config.sources {
     -- The insertion order influences the priority of the sources
-    { name = 'copilot' },
+    { name = 'copilot', group_index = 2 },
     {
       name = 'nvim_lsp', --[[ keyword_length = 3 ]]
+      group_index = 2,
     },
-    { name = 'luasnip' },
+    { name = 'luasnip', group_index = 2 },
     {
       name = 'nvim_lsp_signature_help', --[[ keyword_length = 3 ]]
+      group_index = 2,
     },
-    { name = 'buffer' },
-    { name = 'path' },
-    { name = 'nerdfont', trigger_characters = { ':' } },
+    { name = 'buffer', group_index = 2 },
+    { name = 'path', group_index = 2 },
+    { name = 'nerdfont', group_index = 2, trigger_characters = { ':' } },
   },
   enabled = function()
     return vim.bo[0].buftype ~= 'prompt'

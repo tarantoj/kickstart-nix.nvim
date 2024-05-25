@@ -118,6 +118,7 @@ with final.pkgs.lib; let
     dressing-nvim
     ollama-nvim
     copilot-lua
+    CopilotChat-nvim
     copilot-cmp
     obsidian-nvim
   ];

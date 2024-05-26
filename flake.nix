@@ -13,11 +13,6 @@
       };
     };
 
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     cmp-nerdfont = {
       url = "github:chrisgrieser/cmp-nerdfont";
       flake = false;
@@ -51,8 +46,6 @@
     nixpkgs,
     flake-utils,
     gen-luarc,
-    neovim-nightly-overlay,
-    # omnisharp-extended-lsp-nvim,
     easy-dotnet,
     cmp-nerdfont,
     ...
@@ -71,7 +64,6 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          # neovim-nightly-overlay.overlay
           # Import the overlay, so that the final Neovim derivation(s) can be accessed via pkgs.<nvim-pkg>
           neovim-overlay
           # This adds a function can be used to generate a .luarc.json

@@ -12,7 +12,10 @@ vim.api.nvim_create_autocmd('InsertEnter', {
   callback = function()
     require('copilot').setup { suggestion = { enabled = false }, panel = { enabled = false } }
     require('copilot_cmp').setup()
-    require('CopilotChat').setup {}
+
+    if require('copilot').sessionid ~= nil then
+      require('CopilotChat').setup {}
+    end
 
     vim.keymap.set('n', '<leader>ccq', function()
       local input = vim.fn.input 'Quick Chat: '

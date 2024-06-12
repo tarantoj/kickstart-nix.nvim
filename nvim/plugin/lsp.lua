@@ -180,3 +180,7 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
+
+lspconfig.lemminx.setup {}
+lspconfig.dockerls.setup {}
+lspconfig.docker_compose_language_service.setup {}

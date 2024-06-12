@@ -127,6 +127,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nodePackages.bash-language-server
+    lemminx
     typos-lsp
     netcoredbg
     alejandra

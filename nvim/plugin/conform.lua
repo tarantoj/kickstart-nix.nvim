@@ -34,6 +34,7 @@ require('conform').setup {
     typescriptreact = { { 'prettierd', 'prettier' } },
     sh = { 'shfmt' },
     markdown = { 'injected' },
+    cs = { 'csharpier' },
   },
   format_on_save = {
     -- These options will be passed to conform.format()

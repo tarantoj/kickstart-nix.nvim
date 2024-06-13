@@ -140,6 +140,7 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     shfmt
     nodePackages.prettier
+    csharpier
     prettierd
     gh
     ripgrep

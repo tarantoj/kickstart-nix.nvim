@@ -59,6 +59,13 @@ local config = {
 dap.configurations.cs = config
 dap.configurations.fsharp = config
 
+local vscode = require 'dap.ext.vscode'
+local json = require 'plenary.json'
+
+vscode.json_decode = function(str)
+  return vim.json.decode(json.json_strip_comments(str, {}))
+end
+
 require('which-key').register { ['<leader>d'] = { name = '+debug' } }
 
 local keymap = vim.keymap
@@ -120,3 +127,11 @@ end, { desc = 'Terminate' })
 keymap.set('n', '<leader>dw', function()
   require('dap.ui.widgets').hover()
 end, { desc = 'Widgets' })
+
+keymap.set('n', '<leader>du', function()
+  require('dapui').toggle {}
+end, { desc = 'Dap UI' })
+
+keymap.set({ 'n', 'v' }, '<leader>de', function()
+  require('dapui').eval()
+end, { desc = 'Eval' })

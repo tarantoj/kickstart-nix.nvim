@@ -128,6 +128,8 @@ with final.pkgs.lib; let
     lua-language-server
     bash-language-server
     lemminx
+    dockerfile-language-server-nodejs
+    docker-compose-language-service
     typos-lsp
     netcoredbg
     alejandra

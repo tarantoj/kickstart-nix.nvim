@@ -63,12 +63,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
     -- Attach plugins
-    ---@diagnostic disable-next-line: need-check-nil
-    if client.supports_method 'textDocument/documentSymbol' then
-      require('nvim-navic').attach(client, bufnr)
-    end
+    require('nvim-navic').attach(client, bufnr)
 
-    vim.cmd.setlocal 'signcolumn=yes'
+    vim.cmd.setlocal('signcolumn=yes')
     vim.bo[bufnr].bufhidden = 'hide'
 
     -- Enable completion triggered by <c-x><c-o>
@@ -102,14 +99,35 @@ vim.api.nvim_create_autocmd('LspAttach', {
       --[[ vim.lsp.buf.format { async = true } ]]
       require('conform').format { async = true, lsp_fallback = true }
     end, desc '[lsp] [f]ormat buffer')
-    if client.server_capabilities.inlayHintProvider then
+    if client and client.server_capabilities.inlayHintProvider then
       keymap.set('n', '<space>h', function()
-        local current_setting = vim.lsp.inlay_hint.is_enabled(bufnr)
-        vim.lsp.inlay_hint.enable(bufnr, not current_setting)
+        local current_setting = vim.lsp.inlay_hint.is_enabled { bufnr = bufnr }
+        vim.lsp.inlay_hint.enable(not current_setting, { bufnr = bufnr })
       end, desc '[lsp] toggle inlay hints')
     end
 
     -- Auto-refresh code lenses
+
+        if not client then
+          return
+        end
+        local function buf_refresh_codeLens()
+          vim.schedule(function()
+            if client.server_capabilities.codeLensProvider then
+              vim.lsp.codelens.refresh()
+              return
+            end
+          end)
+        end
+        local group = api.nvim_create_augroup(string.format('lsp-%s-%s', bufnr, client.id), {})
+        if client.server_capabilities.codeLensProvider then
+          vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost', 'TextChanged' }, {
+            group = group,
+            callback = buf_refresh_codeLens,
+            buffer = bufnr,
+          })
+          buf_refresh_codeLens()
+        end
   end,
 })
 

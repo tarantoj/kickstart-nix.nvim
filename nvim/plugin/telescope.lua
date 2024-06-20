@@ -1,7 +1,7 @@
-local telescope = require 'telescope'
-local actions = require 'telescope.actions'
+local telescope = require('telescope')
+local actions = require('telescope.actions')
 
-local builtin = require 'telescope.builtin'
+local builtin = require('telescope.builtin')
 local keymap = vim.keymap
 
 keymap.set('n', '<leader>,', '<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>', { desc = 'Switch Buffer' })
@@ -62,6 +62,6 @@ telescope.setup {
   },
 }
 
-telescope.load_extension 'fzy_native'
-telescope.load_extension 'ui-select'
+telescope.load_extension('fzy_native')
+telescope.load_extension('ui-select')
 -- telescope.load_extension('smart_history')

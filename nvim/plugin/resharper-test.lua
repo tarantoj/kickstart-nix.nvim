@@ -1,16 +1,17 @@
-local h = require 'null-ls.helpers'
+local h = require('null-ls.helpers')
 
 local function parse_checkstyle_errors(params, output)
-  if params.err:match 'Must specify a config XML file.' then
+  if params.err:match('Must specify a config XML file.') then
     table.insert(output, {
-      message = 'You need to specify a configuration for checkstyle.' .. ' See https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md#checkstyle',
+      message = 'You need to specify a configuration for checkstyle.'
+        .. ' See https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md#checkstyle',
       severity = vim.diagnostic.severity.ERROR,
       bufnr = params.bufnr,
     })
     return
   end
 
-  if params.err:match 'Checkstyle ends with %d+ errors.' then
+  if params.err:match('Checkstyle ends with %d+ errors.') then
     return
   end
 

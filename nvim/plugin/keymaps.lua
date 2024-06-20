@@ -112,7 +112,7 @@ end, { silent = true, desc = 'dec window [h]eight' })
 
 -- Close floating windows [Neovim 0.10 and above]
 keymap.set('n', '<leader>fq', function()
-  vim.cmd 'fclose!'
+  vim.cmd('fclose!')
 end, { silent = true, desc = '[f]loating windows: [q]uit/close all' })
 
 -- Remap Esc to switch to normal mode and Ctrl-Esc to pass Esc to terminal
@@ -122,7 +122,7 @@ keymap.set('t', '<C-Esc>', '<Esc>', { desc = 'send Esc to terminal' })
 -- Shortcut for expanding to current buffer's directory in command mode
 keymap.set('c', '%%', function()
   if fn.getcmdtype() == ':' then
-    return fn.expand '%:h' .. '/'
+    return fn.expand('%:h') .. '/'
   else
     return '%%'
   end

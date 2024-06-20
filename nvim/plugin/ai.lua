@@ -18,19 +18,19 @@ vim.api.nvim_create_autocmd('InsertEnter', {
     end
 
     vim.keymap.set('n', '<leader>ccq', function()
-      local input = vim.fn.input 'Quick Chat: '
+      local input = vim.fn.input('Quick Chat: ')
       if input ~= '' then
         require('CopilotChat').ask(input, { selection = require('CopilotChat.select').buffer })
       end
     end, { desc = 'CopilotChat - Quick chat' })
 
     vim.keymap.set('n', '<leader>cch', function()
-      local actions = require 'CopilotChat.actions'
+      local actions = require('CopilotChat.actions')
       require('CopilotChat.integrations.telescope').pick(actions.help_actions())
     end, { desc = 'CopilotChat - Help actions' })
 
     vim.keymap.set('n', '<leader>ccp', function()
-      local actions = require 'CopilotChat.actions'
+      local actions = require('CopilotChat.actions')
       require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
     end, { desc = 'CopilotChat - Prompt actions' })
 

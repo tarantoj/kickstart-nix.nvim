@@ -10,7 +10,7 @@ g.maplocalleader = ' '
 opt.compatible = false
 
 -- Enable true colour support
-if fn.has 'termguicolors' then
+if fn.has('termguicolors') then
   opt.termguicolors = true
 end
 

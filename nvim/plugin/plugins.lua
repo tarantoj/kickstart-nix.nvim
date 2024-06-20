@@ -15,6 +15,6 @@ require('treesj').setup()
 require('nvim-lightbulb').setup {
   autocmd = { enabled = true },
 }
-require 'dressing'
+require('dressing')
 require('ollama').setup {}
 require('easy-dotnet').setup()

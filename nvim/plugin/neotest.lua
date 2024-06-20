@@ -1,7 +1,7 @@
 require('neotest').setup {
   adapters = {
-    require 'neotest-jest' {},
-    require 'neotest-dotnet' {
+    require('neotest-jest') {},
+    require('neotest-dotnet') {
       dap = {
         -- Extra arguments for nvim-dap configuration
         -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
@@ -17,7 +17,7 @@ local keymap = vim.keymap
 
 -- keymap.set('n', "<leader>tt",
 keymap.set('n', '<leader>tt', function()
-  require('neotest').run.run(vim.fn.expand '%')
+  require('neotest').run.run(vim.fn.expand('%'))
 end, { desc = 'Run File' })
 keymap.set('n', '<leader>tT', function()
   require('neotest').run.run(vim.uv.cwd())

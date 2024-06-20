@@ -3,21 +3,21 @@ if vim.g.did_load_completion_plugin then
 end
 vim.g.did_load_completion_plugin = true
 
-local cmp = require 'cmp'
-local lspkind = require 'lspkind'
+local cmp = require('cmp')
+local lspkind = require('lspkind')
 lspkind.init {
   symbol_map = {
     Copilot = '',
   },
 }
-local luasnip = require 'luasnip'
+local luasnip = require('luasnip')
 
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 local function has_words_before()
   local unpack_ = unpack or table.unpack
   local line, col = unpack_(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 ---@param source string|table
@@ -96,14 +96,14 @@ cmp.setup {
       if cmp.visible() then
         cmp.scroll_docs(-4)
       else
-        complete_with_source 'buffer'
+        complete_with_source('buffer')
       end
     end, { 'i', 'c', 's' }),
     ['<C-f>'] = cmp.mapping(function(_)
       if cmp.visible() then
         cmp.scroll_docs(4)
       else
-        complete_with_source 'path'
+        complete_with_source('path')
       end
     end, { 'i', 'c', 's' }),
     ['<C-n>'] = cmp.mapping(function(fallback)
@@ -205,14 +205,14 @@ cmp.setup.cmdline(':', {
 
 vim.keymap.set({ 'i', 'c', 's' }, '<C-n>', cmp.complete, { noremap = false, desc = '[cmp] complete' })
 vim.keymap.set({ 'i', 'c', 's' }, '<C-f>', function()
-  complete_with_source 'path'
+  complete_with_source('path')
 end, { noremap = false, desc = '[cmp] path' })
 vim.keymap.set({ 'i', 'c', 's' }, '<C-o>', function()
-  complete_with_source 'nvim_lsp'
+  complete_with_source('nvim_lsp')
 end, { noremap = false, desc = '[cmp] lsp' })
 vim.keymap.set({ 'c' }, '<C-h>', function()
-  complete_with_source 'cmdline_history'
+  complete_with_source('cmdline_history')
 end, { noremap = false, desc = '[cmp] cmdline history' })
 vim.keymap.set({ 'c' }, '<C-c>', function()
-  complete_with_source 'cmdline'
+  complete_with_source('cmdline')
 end, { noremap = false, desc = '[cmp] cmdline' })

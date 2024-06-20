@@ -6,5 +6,5 @@ vim.g.did_load_catppuccin_plugin = true
 require('catppuccin').setup {}
 
 -- setup must be called before loading
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme('catppuccin')
 vim.o.background = 'dark'

@@ -3,7 +3,7 @@ if vim.g.did_load_lualine_plugin then
 end
 vim.g.did_load_lualine_plugin = true
 
-local navic = require 'nvim-navic'
+local navic = require('nvim-navic')
 navic.setup {--[[  lsp = { auto_attach = true }  ]]
 }
 

@@ -1,4 +1,4 @@
-local dap = require 'dap'
+local dap = require('dap')
 
 require('dapui').setup()
 
@@ -16,11 +16,11 @@ vim.g.dotnet_build_project = function()
   local path = vim.fn.input('Path to your *proj file', default_path, 'file')
   vim.g['dotnet_last_proj_path'] = path
   local cmd = 'dotnet build -c Debug ' .. path .. ' > /dev/null'
-  print ''
+  print('')
   print('Cmd to execute: ' .. cmd)
   local f = os.execute(cmd)
   if f == 0 then
-    print '\nBuild: ✔️ '
+    print('\nBuild: ✔️ ')
   else
     print('\nBuild: ❌ (code: ' .. f .. ')')
   end
@@ -34,7 +34,9 @@ vim.g.dotnet_get_dll_path = function()
   if vim.g['dotnet_last_dll_path'] == nil then
     vim.g['dotnet_last_dll_path'] = request()
   else
-    if vim.fn.confirm('Do you want to change the path to dll?\n' .. vim.g['dotnet_last_dll_path'], '&yes\n&no', 2) == 1 then
+    if
+      vim.fn.confirm('Do you want to change the path to dll?\n' .. vim.g['dotnet_last_dll_path'], '&yes\n&no', 2) == 1
+    then
       vim.g['dotnet_last_dll_path'] = request()
     end
   end
@@ -59,8 +61,8 @@ local config = {
 dap.configurations.cs = config
 dap.configurations.fsharp = config
 
-local vscode = require 'dap.ext.vscode'
-local json = require 'plenary.json'
+local vscode = require('dap.ext.vscode')
+local json = require('plenary.json')
 
 vscode.json_decode = function(str)
   return vim.json.decode(json.json_strip_comments(str, {}))
@@ -70,7 +72,7 @@ require('which-key').register { ['<leader>d'] = { name = '+debug' } }
 
 local keymap = vim.keymap
 keymap.set('n', '<leader>dB', function()
-  require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+  require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
 end, { desc = 'Breakpoint Condition' })
 
 keymap.set('n', '<leader>db', require('dap').toggle_breakpoint, { desc = 'Toggle Breakpoint' })

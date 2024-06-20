@@ -3,7 +3,7 @@ if vim.g.did_load_lualine_plugin then
 end
 vim.g.did_load_lualine_plugin = true
 
-local navic = require 'nvim-navic'
+local navic = require('nvim-navic')
 navic.setup {--[[  lsp = { auto_attach = true }  ]]
 }
 
@@ -33,7 +33,7 @@ require('lualine').setup {
   sections = {
     lualine_c = {
       -- nvim-navic
-      { 'navic' },
+      { navic.get_location, cond = navic.is_available },
     },
     lualine_z = {
       -- (see above)

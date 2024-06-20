@@ -10,7 +10,7 @@ g.maplocalleader = ' '
 opt.compatible = false
 
 -- Enable true colour support
-if fn.has 'termguicolors' then
+if fn.has('termguicolors') then
   opt.termguicolors = true
 end
 
@@ -58,19 +58,6 @@ local function prefix_diagnostic(prefix, diagnostic)
   return string.format(prefix .. ' %s', diagnostic.message)
 end
 
-local sign = function(opts)
-  fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = '',
-  })
-end
--- Requires Nerd fonts
-sign { name = 'DiagnosticSignError', text = '󰅚' }
-sign { name = 'DiagnosticSignWarn', text = '⚠' }
-sign { name = 'DiagnosticSignInfo', text = 'ⓘ' }
-sign { name = 'DiagnosticSignHint', text = '󰌶' }
-
 vim.diagnostic.config {
   virtual_text = {
     prefix = '',
@@ -91,7 +78,15 @@ vim.diagnostic.config {
       return prefix_diagnostic('■', diagnostic)
     end,
   },
-  signs = true,
+  signs = {
+    text = {
+      -- Requires Nerd fonts
+      [vim.diagnostic.severity.ERROR] = '󰅚',
+      [vim.diagnostic.severity.WARN] = '⚠',
+      [vim.diagnostic.severity.INFO] = 'ⓘ',
+      [vim.diagnostic.severity.HINT] = '󰌶',
+    },
+  },
   update_in_insert = false,
   underline = true,
   severity_sort = true,
@@ -111,13 +106,7 @@ vim.opt.colorcolumn = '100'
 
 -- Native plugins
 cmd.filetype('plugin', 'indent', 'on')
-cmd.packadd 'cfilter' -- Allows filtering the quickfix list with :cfdo
+cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
 
 -- let sqlite.lua (which some plugins depend on) know where to find sqlite
-vim.g.sqlite_clib_path = require('luv').os_getenv 'LIBSQLITE'
-
--- this should be at the end, because
--- it causes neovim to source ftplugins
--- on the packpath when passing a file to the nvim command
-cmd.syntax 'on'
-cmd.syntax 'enable'
+vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')

@@ -126,7 +126,7 @@ with final.pkgs.lib; let
   extraPackages = with pkgs; [
     # language servers, etc.
     lua-language-server
-    nodePackages.bash-language-server
+    bash-language-server
     lemminx
     dockerfile-language-server-nodejs
     docker-compose-language-service

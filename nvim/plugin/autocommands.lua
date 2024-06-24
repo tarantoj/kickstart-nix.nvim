@@ -62,11 +62,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local bufnr = ev.buf
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-    -- Attach plugins
-    if client and client.server_capabilities.documentSymbolProvider then
-      require('nvim-navic').attach(client, bufnr)
-    end
-
     vim.cmd.setlocal('signcolumn=yes')
     vim.bo[bufnr].bufhidden = 'hide'
 
@@ -106,29 +101,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local current_setting = vim.lsp.inlay_hint.is_enabled { bufnr = bufnr }
         vim.lsp.inlay_hint.enable(not current_setting, { bufnr = bufnr })
       end, desc('[lsp] toggle inlay hints'))
-    end
-
-    -- Auto-refresh code lenses
-
-    if not client then
-      return
-    end
-    local function buf_refresh_codeLens()
-      vim.schedule(function()
-        if client.server_capabilities.codeLensProvider then
-          vim.lsp.codelens.refresh()
-          return
-        end
-      end)
-    end
-    local group = api.nvim_create_augroup(string.format('lsp-%s-%s', bufnr, client.id), {})
-    if client.server_capabilities.codeLensProvider then
-      vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost', 'TextChanged' }, {
-        group = group,
-        callback = buf_refresh_codeLens,
-        buffer = bufnr,
-      })
-      buf_refresh_codeLens()
     end
   end,
 })

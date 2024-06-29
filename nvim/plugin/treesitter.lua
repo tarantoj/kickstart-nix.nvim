@@ -6,6 +6,8 @@ vim.g.did_load_treesitter_plugin = true
 local configs = require('nvim-treesitter.configs')
 vim.g.skip_ts_context_comment_string_module = true
 
+require('ts-comments').setup {}
+
 ---@diagnostic disable-next-line: missing-fields
 configs.setup {
   -- ensure_installed = 'all',

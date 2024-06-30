@@ -26,7 +26,7 @@ local capabilities = vim.tbl_deep_extend(
 
 require('roslyn').setup {
   exe = 'Microsoft.CodeAnalysis.LanguageServer',
-  filewatching = true,
+  -- filewatching = true,
   config = {
     on_attach = on_attach,
     capabilities = capabilities,

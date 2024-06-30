@@ -24,7 +24,11 @@ local capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-require('roslyn').setup { exe = 'Microsoft.CodeAnalysis.LanguageServer', filewatching = false }
+require('roslyn').setup {
+  exe = 'Microsoft.CodeAnalysis.LanguageServer',
+  -- filewatching = false
+  config = { on_attach = on_attach, capabilities = capabilities },
+}
 -- lspconfig.omnisharp.setup {
 --   on_attach = function(client, bufnr)
 --     vim.cmd.compiler('dotnet')

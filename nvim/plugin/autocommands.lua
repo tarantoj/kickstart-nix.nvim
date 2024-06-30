@@ -87,8 +87,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<space>wq', vim.lsp.buf.workspace_symbol, desc('lsp [w]orkspace symbol [q]'))
     keymap.set('n', '<space>dd', vim.lsp.buf.document_symbol, desc('lsp [dd]ocument symbol'))
     keymap.set('n', '<space>ca', vim.lsp.buf.code_action, desc('lsp [c]ode [a]ction'))
-    -- keymap.set('n', '<space>ca', require('actions-preview').code_actions, desc 'lsp [c]ode [a]ction')
-    -- keymap.set('n', '<M-CR>', vim.lsp.buf.code_action, desc '[lsp] code action')
     keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
     keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, desc('lsp [c]ode lenses [r]efresh'))
     keymap.set('n', 'gr', vim.lsp.buf.references, desc('lsp [g]et [r]eferences'))

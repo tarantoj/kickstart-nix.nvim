@@ -7,6 +7,7 @@ local configs = require('nvim-treesitter.configs')
 vim.g.skip_ts_context_comment_string_module = true
 
 require('ts-comments').setup {}
+require('nvim-ts-autotag').setup {}
 
 ---@diagnostic disable-next-line: missing-fields
 configs.setup {
@@ -98,9 +99,6 @@ configs.setup {
     },
   },
   endwise = {
-    enable = true,
-  },
-  autotag = {
     enable = true,
   },
 }

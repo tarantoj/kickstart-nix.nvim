@@ -9,6 +9,7 @@ require('neotest').setup {
         -- Enter the name of your dap adapter, the default value is netcoredbg
         adapter_name = 'coreclr',
       },
+      discovery_root = 'solution',
     },
   },
   status = { virtual_text = true },

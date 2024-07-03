@@ -40,6 +40,8 @@ require('lualine').setup {
   },
   options = {
     theme = 'catppuccin',
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
   },
   -- Example top tabline configuration (this may clash with other plugins)
   -- tabline = {
@@ -72,15 +74,15 @@ require('lualine').setup {
   --   lualine_y = {},
   --   lualine_z = {},
   -- },
-  winbar = {
-    lualine_z = {
-      {
-        'filename',
-        path = 1,
-        file_status = true,
-        newfile_status = true,
-      },
-    },
-  },
+  -- winbar = {
+  --   lualine_z = {
+  --     {
+  --       'filename',
+  --       path = 1,
+  --       file_status = true,
+  --       newfile_status = true,
+  --     },
+  --   },
+  -- },
   extensions = { 'fugitive', 'fzf', 'toggleterm', 'quickfix' },
 }

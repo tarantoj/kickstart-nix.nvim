@@ -28,6 +28,11 @@
       url = "github:GustavEikaas/easy-dotnet.nvim";
       flake = false;
     };
+
+    roslyn-nvim = {
+      url = "github:tarantoj/roslyn.nvim/nix-support";
+      flake = false;
+    };
   };
 
   nixConfig = {
@@ -48,6 +53,7 @@
     gen-luarc,
     easy-dotnet,
     cmp-nerdfont,
+    roslyn-nvim,
     ...
   }: let
     supportedSystems = [

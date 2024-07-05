@@ -70,6 +70,7 @@ with final.pkgs.lib; let
     # language support
     omnisharp-extended-lsp-nvim
     (mkNvimPlugin inputs.easy-dotnet "easy-dotnet")
+    (mkNvimPlugin inputs.roslyn-nvim "roslyn-nvim")
     # (mkNvimPlugin inputs.omnisharp-extended-lsp-nvim "omnisharp-extended-lsp.nvim")
     nvim-lspconfig
     none-ls-nvim

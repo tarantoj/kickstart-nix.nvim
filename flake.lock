@@ -123,7 +123,25 @@
         "easy-dotnet": "easy-dotnet",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "roslyn-nvim": "roslyn-nvim"
+      }
+    },
+    "roslyn-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720154105,
+        "narHash": "sha256-bE2bVqfNsI8x8g0dx6NTyHguX3Di2//CqYnQISL1Hjw=",
+        "owner": "tarantoj",
+        "repo": "roslyn.nvim",
+        "rev": "57ca8479990639094b74887d7430759f0fda6700",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tarantoj",
+        "ref": "nix-support",
+        "repo": "roslyn.nvim",
+        "type": "github"
       }
     },
     "systems": {

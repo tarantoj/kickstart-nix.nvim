@@ -27,6 +27,7 @@ local capabilities = vim.tbl_deep_extend(
 require('roslyn').setup {
   exe = 'Microsoft.CodeAnalysis.LanguageServer',
   -- filewatching = true,
+  ---@diagnostic disable-next-line: missing-fields
   config = {
     on_attach = on_attach,
     capabilities = capabilities,

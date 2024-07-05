@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<space>ca', vim.lsp.buf.code_action, desc('lsp [c]ode [a]ction'))
     keymap.set('n', '<M-l>', vim.lsp.codelens.run, desc('[lsp] run code lens'))
     keymap.set('n', '<space>cr', vim.lsp.codelens.refresh, desc('lsp [c]ode lenses [r]efresh'))
-    keymap.set('n', 'gr', vim.lsp.buf.references, desc('lsp [g]et [r]eferences'))
+    keymap.set('n', 'gr', require('telescope.builtin').lsp_references, desc('lsp [g]et [r]eferences'))
     keymap.set('n', '<space>f', function()
       --[[ vim.lsp.buf.format { async = true } ]]
       require('conform').format { async = true, lsp_fallback = true }

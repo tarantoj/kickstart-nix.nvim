@@ -34,6 +34,6 @@ vim.api.nvim_create_autocmd('InsertEnter', {
       require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
     end, { desc = 'CopilotChat - Prompt actions' })
 
-    require('ollama').setup { url = 'http://desktop.lan:11434' }
+    require('ollama').setup { url = 'http://desktop.kudu-tone.ts.net:11434' }
   end,
 })

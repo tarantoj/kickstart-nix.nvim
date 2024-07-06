@@ -138,4 +138,4 @@ hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_ex
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 1
+vim.opt.foldlevelstart = 2

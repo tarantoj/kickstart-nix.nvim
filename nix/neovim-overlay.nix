@@ -68,7 +68,7 @@ with final.pkgs.lib; let
     nvim-lightbulb
     # ^ UI
     # language support
-    omnisharp-extended-lsp-nvim
+    # omnisharp-extended-lsp-nvim
     (mkNvimPlugin inputs.easy-dotnet "easy-dotnet")
     (mkNvimPlugin inputs.roslyn-nvim "roslyn-nvim")
     # (mkNvimPlugin inputs.omnisharp-extended-lsp-nvim "omnisharp-extended-lsp.nvim")
@@ -89,6 +89,7 @@ with final.pkgs.lib; let
     neotest-dotnet
     # ^ testing
     # navigation/editing enhancement plugins
+    dial-nvim
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/

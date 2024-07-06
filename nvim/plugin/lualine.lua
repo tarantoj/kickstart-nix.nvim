@@ -31,6 +31,7 @@ require('lualine').setup {
   globalstatus = true,
   sections = {
     lualine_c = {
+      'filename',
       'navic',
     },
     lualine_z = {

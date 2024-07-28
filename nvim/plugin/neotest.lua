@@ -49,4 +49,4 @@ keymap.set('n', '<leader>tS', function()
   require('neotest').run.stop()
 end, { desc = 'Stop' })
 
-require('which-key').register { ['<leader>t'] = { name = '+test' } }
+require('which-key').add { ['<leader>t'] = { group = '+test' } }

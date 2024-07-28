@@ -68,7 +68,7 @@ vscode.json_decode = function(str)
   return vim.json.decode(json.json_strip_comments(str, {}))
 end
 
-require('which-key').register { ['<leader>d'] = { name = '+debug' } }
+require('which-key').add { ['<leader>d'] = { group = 'debug' } }
 
 local keymap = vim.keymap
 keymap.set('n', '<leader>dB', function()

@@ -41,9 +41,9 @@ require('roslyn').setup {
         ['dotnet_highlight_related_json_components'] = true,
         ['dotnet_highlight_related_regex_components'] = true,
       },
-      ['navigation'] = {
-        ['dotnet_navigate_to_decompiled_sources'] = true,
-      },
+      -- ['navigation'] = {
+      --   ['dotnet_navigate_to_decompiled_sources'] = true,
+      -- },
       ['csharp|inlay_hints'] = {
         csharp_enable_inlay_hints_for_implicit_object_creation = true,
         csharp_enable_inlay_hints_for_implicit_variable_types = true,
@@ -58,6 +58,11 @@ require('roslyn').setup {
         dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
         dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
       },
+      ['csharp|code_lens'] = { dotnet_enable_tests_code_lens = false },
+      -- ['csharp|background_analysis'] = {
+      --   dotnet_analyzer_diagnostics_scope = 'FullSolution',
+      --   dotnet_compiler_diagnostics_scope = 'FullSolution',
+      -- },
     },
   },
 }

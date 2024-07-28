@@ -30,7 +30,7 @@
     };
 
     roslyn-nvim = {
-      url = "github:tarantoj/roslyn.nvim/nix-support";
+      url = "github:seblj/roslyn.nvim";
       flake = false;
     };
   };

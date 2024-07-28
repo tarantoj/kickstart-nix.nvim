@@ -130,16 +130,15 @@
     "roslyn-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1721913974,
-        "narHash": "sha256-pgy6KfjjCfDjpc285fRpvrUfC7SouRLAvs/d6TFtkOI=",
-        "owner": "tarantoj",
+        "lastModified": 1721941596,
+        "narHash": "sha256-nUirwTjda9OK2M8Y6j2pA86yG2d0wF643YObTH3Jt8A=",
+        "owner": "seblj",
         "repo": "roslyn.nvim",
-        "rev": "a9778bcb499087e802c2f37c22a8023dc2c3d90c",
+        "rev": "070cda8c7db75e9600b0719045c6d1f183a58c4c",
         "type": "github"
       },
       "original": {
-        "owner": "tarantoj",
-        "ref": "nix-support",
+        "owner": "seblj",
         "repo": "roslyn.nvim",
         "type": "github"
       }

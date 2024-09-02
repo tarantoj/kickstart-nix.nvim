@@ -19,11 +19,11 @@
     "easy-dotnet": {
       "flake": false,
       "locked": {
-        "lastModified": 1724513726,
-        "narHash": "sha256-GGDhFQugybWkWspYChz0I/H7eGpmLAC6h31b+R7knGY=",
+        "lastModified": 1725038943,
+        "narHash": "sha256-F3Zza5hWffbRv+LbcAA5c6MFKTurHjTJ8+Ah8cQFqR8=",
         "owner": "GustavEikaas",
         "repo": "easy-dotnet.nvim",
-        "rev": "c0681324dceb4119330007e26ac806008d2bb5b8",
+        "rev": "d4029d12d1efb09cd5187ef191e36d5ae70d128c",
         "type": "github"
       },
       "original": {
@@ -171,11 +171,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1724224976,
-        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "lastModified": 1724819573,
+        "narHash": "sha256-GnR7/ibgIH1vhoy8cYdmXE6iyZqKqFxQSVkFgosBh6w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "rev": "71e91c409d1e654808b2621f28a327acfdad8dc2",
         "type": "github"
       },
       "original": {
@@ -226,11 +226,11 @@
     "roslyn-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1724343372,
-        "narHash": "sha256-p10n+453Jg1s/nC6CG2mRHMvy1c0tQUVdXCkVa0ijiQ=",
+        "lastModified": 1724793553,
+        "narHash": "sha256-vh6mCefQ0KWAreK3oDDpfyC2D7dK+HlDeMUsp/+dXFM=",
         "owner": "seblj",
         "repo": "roslyn.nvim",
-        "rev": "2046d9fd54cc66a30ae81f892dd9a9742e301fa4",
+        "rev": "60e6ba5479db57c22be6de52a02ecf6902a26a56",
         "type": "github"
       },
       "original": {

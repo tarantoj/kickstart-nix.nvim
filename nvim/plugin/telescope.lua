@@ -14,6 +14,7 @@ keymap.set('n', '<leader>fb', '<cmd>Telescope buffers sort_mru=true sort_lastuse
 keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
 keymap.set('n', '<leader>fF', builtin.git_files, { desc = 'Find Files (git)' })
 keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find Files (git-files)' })
+keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols, { desc = 'Find Symbols (lsp)' })
 keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = 'Recent' })
 -- keymap.set('n', "<leader>fR", LazyVim.telescope("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" })
 -- git

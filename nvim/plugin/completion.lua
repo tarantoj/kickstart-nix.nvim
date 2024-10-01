@@ -77,7 +77,7 @@ cmp.setup {
     priority_weight = 2,
     comparators = {
       cmp.config.compare.exact,
-      require('copilot_cmp.comparators').prioritize,
+      -- require('copilot_cmp.comparators').prioritize,
       -- Below is the default comparator list and order for nvim-cmp
       cmp.config.compare.offset,
       -- cmp.config.compare.scopes, --this is commented in nvim-cmp too

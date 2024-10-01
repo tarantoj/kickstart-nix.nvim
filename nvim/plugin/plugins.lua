@@ -16,5 +16,5 @@ require('nvim-lightbulb').setup {
   autocmd = { enabled = true },
 }
 require('dressing')
-require('ollama').setup {}
+-- require('ollama').setup {}
 require('easy-dotnet').setup()

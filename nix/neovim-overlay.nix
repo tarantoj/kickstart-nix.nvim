@@ -154,7 +154,7 @@ with final.pkgs.lib; let
     ripgrep
     yaml-language-server
     gopls
-    ollama
+    # ollama
     nodePackages.nodejs
   ];
 in {

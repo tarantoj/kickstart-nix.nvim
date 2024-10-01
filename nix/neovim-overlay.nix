@@ -122,10 +122,10 @@ with final.pkgs.lib; let
     SchemaStore-nvim
     direnv-vim
     dressing-nvim
-    ollama-nvim
-    copilot-lua
-    CopilotChat-nvim
-    copilot-cmp
+    # ollama-nvim
+    # copilot-lua
+    # CopilotChat-nvim
+    # copilot-cmp
     obsidian-nvim
   ];
 

@@ -6,9 +6,9 @@ vim.g.did_load_completion_plugin = true
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 lspkind.init {
-  symbol_map = {
-    Copilot = '',
-  },
+  -- symbol_map = {
+  --   Copilot = '',
+  -- },
 }
 local luasnip = require('luasnip')
 
@@ -64,7 +64,7 @@ cmp.setup {
         nvim_lua = '[API]',
         path = '[PATH]',
         luasnip = '[SNIP]',
-        copilot = '[AI]',
+        -- copilot = '[AI]',
       },
     },
   },
@@ -148,7 +148,7 @@ cmp.setup {
   },
   sources = cmp.config.sources {
     -- The insertion order influences the priority of the sources
-    { name = 'copilot', group_index = 2 },
+    -- { name = 'copilot', group_index = 2 },
     {
       name = 'nvim_lsp', --[[ keyword_length = 3 ]]
       group_index = 2,

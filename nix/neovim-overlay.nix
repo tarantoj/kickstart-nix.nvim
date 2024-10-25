@@ -144,7 +144,7 @@ with final.pkgs.lib; let
     stylua
     roslyn-ls
     clang-tools
-    nil # nix LSP
+    nixd
     nodePackages.typescript-language-server
     shfmt
     nodePackages.prettier

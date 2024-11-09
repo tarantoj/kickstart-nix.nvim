@@ -156,6 +156,8 @@ with final.pkgs.lib; let
     gopls
     # ollama
     nodePackages.nodejs
+    # terraform-lsp
+    terraform-ls
   ];
 in {
   # This is the neovim derivation

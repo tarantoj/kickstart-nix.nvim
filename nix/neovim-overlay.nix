@@ -158,6 +158,7 @@ with final.pkgs.lib; let
     nodePackages.nodejs
     # terraform-lsp
     terraform-ls
+    tflint
   ];
 in {
   # This is the neovim derivation

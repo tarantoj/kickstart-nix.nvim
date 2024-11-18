@@ -243,3 +243,5 @@ lspconfig.docker_compose_language_service.setup {
 
 -- lspconfig.terraform_lsp.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.terraformls.setup { capabilities = capabilities, on_attach = on_attach }
+
+lspconfig.tflint.setup { capabilities = capabilities, on_attach = on_attach }

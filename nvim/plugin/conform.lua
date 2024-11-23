@@ -34,6 +34,7 @@ local prettier_settings = {
 require('conform').setup {
   formatters_by_ft = {
     lua = { 'stylua' },
+    sql = { 'sqlfluff' },
     -- Conform will run multiple formatters sequentially
     -- python = { "isort", "black" },
     -- Use a sub-list to run only the first available formatter
@@ -72,6 +73,9 @@ require('conform').setup {
   formatters = {
     prettier = prettier_settings,
     prettierd = prettier_settings,
+    -- sqlfluff = {
+    --   args = { 'format', '--dialect=ansi', '-' },
+    -- },
     -- resharper = {
     --   args = { 'cleanupcode', '$FILENAME' },
     --   command = 'jb',

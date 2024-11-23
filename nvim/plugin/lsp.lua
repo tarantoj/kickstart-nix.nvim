@@ -1,6 +1,49 @@
 local lspconfig = require('lspconfig')
 
+local function semantic_tokens(client)
+  -- NOTE: Super hacky... Don't know if I like that we set a random variable on the client
+  -- Seems to work though
+  if client.is_hacked then
+    return
+  end
+  client.is_hacked = true
+
+  -- let the runtime know the server can do semanticTokens/full now
+  client.server_capabilities = vim.tbl_deep_extend('force', client.server_capabilities, {
+    semanticTokensProvider = {
+      full = true,
+    },
+  })
+
+  -- monkey patch the request proxy
+  local request_inner = client.request
+  client.request = function(method, params, handler, req_bufnr)
+    if method ~= vim.lsp.protocol.Methods.textDocument_semanticTokens_full then
+      return request_inner(method, params, handler)
+    end
+
+    local target_bufnr = vim.uri_to_bufnr(params.textDocument.uri)
+    local line_count = vim.api.nvim_buf_line_count(target_bufnr)
+    local last_line = vim.api.nvim_buf_get_lines(target_bufnr, line_count - 1, line_count, true)[1]
+
+    return request_inner('textDocument/semanticTokens/range', {
+      textDocument = params.textDocument,
+      range = {
+        ['start'] = {
+          line = 0,
+          character = 0,
+        },
+        ['end'] = {
+          line = line_count - 1,
+          character = string.len(last_line) - 1,
+        },
+      },
+    }, handler, req_bufnr)
+  end
+end
+
 local on_attach = function(client, bufnr)
+  require('workspace-diagnostics').populate_workspace_diagnostics(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
@@ -16,6 +59,7 @@ local on_attach = function(client, bufnr)
       })
     end
   end
+  semantic_tokens(client)
 end
 
 local capabilities = vim.tbl_deep_extend(
@@ -30,7 +74,16 @@ require('roslyn').setup {
   ---@diagnostic disable-next-line: missing-fields
   config = {
     on_attach = on_attach,
-    capabilities = capabilities,
+    -- capabilities = vim.tbl_deep_extend('keep', capabilities, {
+    --   textDocument = {
+    --     diagnostic = {
+    --       dynamicRegistration = true,
+    --     },
+    --   },
+    -- }),
+    filetypes = { 'cs' },
+    filewatching = true,
+
     settings = {
       ['csharp|completion'] = {
         ['dotnet_provide_regex_completions'] = true,
@@ -59,10 +112,10 @@ require('roslyn').setup {
         dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
       },
       ['csharp|code_lens'] = { dotnet_enable_tests_code_lens = false },
-      -- ['csharp|background_analysis'] = {
-      --   dotnet_analyzer_diagnostics_scope = 'FullSolution',
-      --   dotnet_compiler_diagnostics_scope = 'FullSolution',
-      -- },
+      ['csharp|background_analysis'] = {
+        dotnet_analyzer_diagnostics_scope = 'openFiles',
+        dotnet_compiler_diagnostics_scope = 'fullSolution',
+      },
     },
   },
 }
@@ -229,6 +282,18 @@ lspconfig.clangd.setup {
 lspconfig.lemminx.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    fileAssociations = {
+      {
+        pattern = 'Directory.Build.props',
+        systemId = 'https://raw.githubusercontent.com/dotnet/msbuild/refs/heads/main/src/MSBuild/Microsoft.Build.xsd',
+      },
+      {
+        pattern = '*.csproj',
+        systemId = 'https://raw.githubusercontent.com/dotnet/msbuild/refs/heads/main/src/MSBuild/Microsoft.Build.xsd',
+      },
+    },
+  },
 }
 
 lspconfig.dockerls.setup {
@@ -245,3 +310,5 @@ lspconfig.docker_compose_language_service.setup {
 lspconfig.terraformls.setup { capabilities = capabilities, on_attach = on_attach }
 
 lspconfig.tflint.setup { capabilities = capabilities, on_attach = on_attach }
+
+lspconfig.postgres_lsp.setup { capabilities = capabilities, on_attach = on_attach }

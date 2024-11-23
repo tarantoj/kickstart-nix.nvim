@@ -31,6 +31,11 @@
 
     roslyn-nvim = {
       url = "github:seblj/roslyn.nvim";
+      flake=false;
+      };
+
+    workspace-diagnostics = {
+      url = "github:artemave/workspace-diagnostics.nvim";
       flake = false;
     };
   };
@@ -54,6 +59,7 @@
     easy-dotnet,
     cmp-nerdfont,
     roslyn-nvim,
+    workspace-diagnostics,
     ...
   }: let
     supportedSystems = [

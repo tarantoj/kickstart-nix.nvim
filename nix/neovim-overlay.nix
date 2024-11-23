@@ -71,6 +71,7 @@ with final.pkgs.lib; let
     # omnisharp-extended-lsp-nvim
     (mkNvimPlugin inputs.easy-dotnet "easy-dotnet")
     (mkNvimPlugin inputs.roslyn-nvim "roslyn-nvim")
+    (mkNvimPlugin inputs.workspace-diagnostics "workspace-diagnostics")
     # (mkNvimPlugin inputs.omnisharp-extended-lsp-nvim "omnisharp-extended-lsp.nvim")
     nvim-lspconfig
     none-ls-nvim
@@ -127,6 +128,7 @@ with final.pkgs.lib; let
     # CopilotChat-nvim
     # copilot-cmp
     obsidian-nvim
+    nvim-lint
   ];
 
   extraPackages = with pkgs; [
@@ -143,6 +145,15 @@ with final.pkgs.lib; let
     vscode-langservers-extracted
     stylua
     roslyn-ls
+    (
+      with dotnetCorePackages;
+      combinePackages [
+        sdk_6_0
+        sdk_7_0
+        sdk_8_0
+        sdk_9_0
+      ]
+    )
     clang-tools
     nixd
     nodePackages.typescript-language-server
@@ -159,6 +170,8 @@ with final.pkgs.lib; let
     # terraform-lsp
     terraform-ls
     tflint
+    postgres-lsp
+    sqlfluff
   ];
 in {
   # This is the neovim derivation

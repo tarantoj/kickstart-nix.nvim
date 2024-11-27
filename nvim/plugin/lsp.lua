@@ -74,6 +74,7 @@ require('roslyn').setup {
   ---@diagnostic disable-next-line: missing-fields
   config = {
     on_attach = on_attach,
+    capabilities = capabilities,
     -- capabilities = vim.tbl_deep_extend('keep', capabilities, {
     --   textDocument = {
     --     diagnostic = {

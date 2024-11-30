@@ -3,11 +3,11 @@
     "cmp-nerdfont": {
       "flake": false,
       "locked": {
-        "lastModified": 1700663605,
+        "lastModified": 1732723172,
         "narHash": "sha256-alHMwjzYZO5rCgQUUUEcGNkW3PuYJFfGyo531wNw7p4=",
         "owner": "chrisgrieser",
         "repo": "cmp-nerdfont",
-        "rev": "a3b7c0cadb7bd389f513eecda376d4c6bec90003",
+        "rev": "e97482344ebed29093015a18c155057adf5c842b",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
     "roslyn-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1732630080,
-        "narHash": "sha256-v0yOK8x7huLnm851VL+7cdisHV+KtCPgPaX610p+Huc=",
+        "lastModified": 1732919126,
+        "narHash": "sha256-t1bhvJB3bq2+/pR5exiv4rSS6TYF05s7NjtAUKSHDes=",
         "owner": "seblj",
         "repo": "roslyn.nvim",
-        "rev": "6af74141d1bfb783cbddf85b4594bfe20fea1a1f",
+        "rev": "17ab3fda128f4df577c1d792244ac4491513cc8f",
         "type": "github"
       },
       "original": {

@@ -19,11 +19,11 @@
     "easy-dotnet": {
       "flake": false,
       "locked": {
-        "lastModified": 1732954054,
-        "narHash": "sha256-n6PV8jplYN8cKZBbotL4nkx523NX21xeRTYtMamVpfQ=",
+        "lastModified": 1733125262,
+        "narHash": "sha256-bwSjU00w3+ll7SE9WC6M7vUGVlIp0O2Fzn8mUZuLik8=",
         "owner": "GustavEikaas",
         "repo": "easy-dotnet.nvim",
-        "rev": "dd781e1229f5d05e9293318160910561fa6388f4",
+        "rev": "2423f5093433dd76fc74bc97f5c6d3b54c28e16c",
         "type": "github"
       },
       "original": {
@@ -171,11 +171,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732837521,
-        "narHash": "sha256-jNRNr49UiuIwaarqijgdTR2qLPifxsVhlJrKzQ8XUIE=",
+        "lastModified": 1733392399,
+        "narHash": "sha256-kEsTJTUQfQFIJOcLYFt/RvNxIK653ZkTBIs4DG+cBns=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "970e93b9f82e2a0f3675757eb0bfc73297cc6370",
+        "rev": "d0797a04b81caeae77bcff10a9dde78bc17f5661",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
     "roslyn-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1732919126,
-        "narHash": "sha256-t1bhvJB3bq2+/pR5exiv4rSS6TYF05s7NjtAUKSHDes=",
+        "lastModified": 1733558179,
+        "narHash": "sha256-cqTko/EHyKIIRGgo5TabxrE7kUjGXS43HwlV7xkfZ3M=",
         "owner": "seblj",
         "repo": "roslyn.nvim",
-        "rev": "17ab3fda128f4df577c1d792244ac4491513cc8f",
+        "rev": "295ce5beb9af1c273e0af19909b3e18a9223799b",
         "type": "github"
       },
       "original": {
